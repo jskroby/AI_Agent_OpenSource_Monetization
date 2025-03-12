@@ -1,0 +1,22 @@
+{
+  "image": "ubuntu:latest",
+  "volumes": [
+    {
+      "name": "model-data",
+      "mountPath": "/var/models/share/system",
+      "persistentBool": true
+    }
+  ],
+  "features": [
+    {
+      "text": "Start Minikube",
+      "postCreate": "terminal",
+      "shell": "minikube start"
+    },
+    {
+      "text": "Apply Kubernetes Deployment",
+      "postCreate": "terminal",
+      "shell": "curl https://ollama.com/install.sh | bash && kubactl apply -f kubernetes/deployment.yaml"
+    }
+  ]
+}
