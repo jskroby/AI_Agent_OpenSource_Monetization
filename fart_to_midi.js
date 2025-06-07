@@ -2,6 +2,7 @@ const express = require('express');
 const multer = require('multer');
 const fs = require('fs');
 const jsmidgen = require('jsmidgen');
+require('dotenv').config();
 const {
   Connection,
   clusterApiUrl,
@@ -22,8 +23,9 @@ app.get('/', (req, res) => {
 });
 
 // Solana setup
-const connection = new Connection(clusterApiUrl('devnet'));
-const TAX_WALLET = new PublicKey('11111111111111111111111111111111'); // replace with real tax wallet
+const cluster = process.env.SOLANA_CLUSTER || 'devnet';
+const connection = new Connection(clusterApiUrl(cluster));
+const TAX_WALLET = new PublicKey(process.env.TAX_WALLET || '11111111111111111111111111111111');
 
 // Simple function to generate a MIDI file based on file length (placeholder)
 function generateMidiFromAudio(path) {
@@ -79,6 +81,10 @@ app.post('/replica', (req, res) => {
 
 const PORT = process.env.PORT || 7860;
 // Bind to 0.0.0.0 so the server works on platforms like HuggingFace Spaces
-app.listen(PORT, '0.0.0.0', () =>
-  console.log(`Fart2Midi DApp running on port ${PORT}`)
-);
+if (require.main === module) {
+  app.listen(PORT, '0.0.0.0', () =>
+    console.log(`Fart2Midi DApp running on port ${PORT}`)
+  );
+}
+
+module.exports = app;

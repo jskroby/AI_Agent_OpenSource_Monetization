@@ -15,3 +15,16 @@ The app binds to `0.0.0.0` so it can run on platforms like HuggingFace Spaces.
 npm install
 npm start
 ```
+
+Create a `.env` file with:
+
+```
+TAX_WALLET=<your-solana-address>
+SOLANA_CLUSTER=devnet
+```
+
+Then run tests with:
+
+```bash
+npm test
+```
