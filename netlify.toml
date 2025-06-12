@@ -1,0 +1,5 @@
+[build]
+  publish = "public"
+
+[context.production]
+  branch = "main"

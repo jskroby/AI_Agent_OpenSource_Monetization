@@ -1,0 +1,28 @@
+{
+  "name": "fart-to-midi-dapp",
+  "version": "1.0.0",
+  "repository": "https://github.com/youruser/fart-to-midi-dapp",
+  "description": "Neomorphic fart-to-MIDI DApp",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node fart_to_midi.js",
+    "deploy": "gh-pages -d public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@solana/web3.js": "^1.98.2",
+    "express": "^5.1.0",
+    "jsmidgen": "^0.1.5",
+    "multer": "^2.0.1"
+  },
+  "devDependencies": {
+    "dotenv": "^16.5.0",
+    "gh-pages": "^5.0.0",
+    "jest": "^29.7.0",
+    "supertest": "^7.1.1"
+  }
+}
