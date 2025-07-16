@@ -15,3 +15,12 @@ The app binds to `0.0.0.0` so it can run on platforms like HuggingFace Spaces.
 npm install
 npm start
 ```
+
+## Windsurf Agent
+
+This repository includes an experimental script `windsurf.js` that implements an infinite self-correcting loop. It aims to keep CPU and memory usage low while running indefinitely.
+Run it with Node.js (preferably with `--expose-gc` to enable manual garbage collection):
+
+```bash
+node --expose-gc windsurf.js
+```
