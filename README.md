@@ -32,3 +32,14 @@ cd fabric-network
 bash bc-network.sh
 ```
 These scripts are provided as examples and require Docker and Fabric binaries installed locally.
+
+## Creating a demo video
+
+You can create a simple promotional video for YouTube or TikTok using ffmpeg. Provide a screenshot of the app and an audio clip, then run:
+
+```bash
+./scripts/create_demo_video.sh screenshot.png audio.mp3
+```
+
+The script produces `demo.mp4` in the project root. Upload this video to your favorite platform.
+
